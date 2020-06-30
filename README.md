@@ -4,20 +4,55 @@
 
 # 使用方法：
 
-- 打开企业微信，打开Fiddle，进行抓包，具体过程看源仓库介绍
-- 在指定位置填写cookies
-- 填写经纬度，为防止意外，还需要填写所在省份等信息
-- 可根据代码注释自己填写，目前要修改的就上面几个内容
+## Fiddler对企业微信进行抓包
+
+### 1. 打开Fiddler，Tools—>Options，设置如下：
+
+![image-20200630142457401](https://i.loli.net/2020/06/30/2Djra8tCszilpgO.png)
+
+### 2. 打开企业微信，进入疫情防控上报页面
+
+![image-20200630142616244](https://i.loli.net/2020/06/30/MTWDeO3p1wjSNsn.png)
+
+### 3.找到Cookie值，填写`eai-sess`和`UUkey`
+
+![image-20200630143137490](https://i.loli.net/2020/06/30/zqhwLifIoa5xk24.png)
+
+![image-20200630143220571](https://i.loli.net/2020/06/30/ucEKLUdDn9vx1IZ.png)
+
+### 4.填写经纬度，为防止意外
+
+这个可以使用高德地图官网的工具，自己谷歌吧！
+
+![image-20200630143742287](https://i.loli.net/2020/06/30/iPqdop2h5XlnmD8.png)
+
+### 5.填写所在地信息，也就是平时的定位
+
+填写的内容有`province`（省），`city`（市），`district`（区或县）等，关于这些的都填了吧！可以按照手机定位的信息填写。
+
+![image-20200630143442693](https://i.loli.net/2020/06/30/HenRqMhdow8sryQ.png)
 
 # 每天定时自动上报
 
-## Linux下，下面是在腾讯云服务器上的示例：
+## Windows下：创建任务计划程序
+
+**先说结果，创建后等了两天，发现计算机关机后好像程序并不会定时执行。如果能保证计算机每天都开机可以使用，运行时间就自行设定。**
+
+参考文章：https://blog.csdn.net/u012849872/article/details/82719372
+
+![image-20200630144238889](https://i.loli.net/2020/06/30/rGiaeJXZzLAKTfy.png)
+
+## Linux下，使用`crontab`创建定时任务：
+
+**和Windows下一样，虚拟机关机后也不会运行，具体步骤可以参考下面，方法一样，就是一个是服务器，一个是本地的**，能保证每天运行Linux环境也可以使用这种方法。
+
+# 最后，部署到云服务器上（可行）
 
 ### 1. 安装anaconda环境，或者python环境
 
 ### 2. 使用Linux下`crontab`命令创建定时计划任务：
 
-经过测试，发现创建的`crontab`计划任务必须要在系统级，否则在XSehll关闭后，定时任务并不会运行。
+经过测试，发现创建的`crontab`计划任务必须要在**系统级**，否则在XSehll或ssh连接关闭后，定时任务并不会运行。
 
 1. 运行命令`vim /etc/crontab`
 
