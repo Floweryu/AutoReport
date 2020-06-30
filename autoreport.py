@@ -13,8 +13,8 @@ if __name__ == '__main__':
 
 	# report
 	cookies = {
-		'eai-sess': 'ctnig8mrkjhqs93ulpi0mmsra7',  # 使用cookies进行身份认证
-		'UUkey': '0d59fb2ae0d372c4f5a4a32c80413b79'
+		'eai-sess': '',  # 使用cookies进行身份认证
+		'UUkey': ''
 	}
 
 	data = {
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 		'sfcxtz': '0',  # 今日是否出现发热、乏力、干咳、呼吸困难等症状？
 		'sfjcbh': '0',  # 今日是否接触疑似/确诊人群？
 		'sfcxzysx': '0',  # 是否有任何与疫情相关的注意事项？
-		'qksm': '我的家在湖北省襄阳市谷城县',  # 情况说明
+		'qksm': '',  # 情况说明
 		'sfyyjc': '0',  # 是否医院检查
 		'jcjgqr': '0',  # 检查结果确认
 		'remark': '',
@@ -58,18 +58,18 @@ if __name__ == '__main__':
 				'buildingType': '',
 				'street': '',
 				'streetNumber': '',
-				'province': '湖北省',  # 所在省
-				'city': '襄阳市',  # 所在市
-				'district': '谷城县',  # 所在区
+				'province': '',  # 所在省
+				'city': '',  # 所在市
+				'district': '',  # 所在区
 				'township': ''  # 所在街道
 			},
 			'formattedAddress': '',  # 拼接后的地址
 			'roads': [],
 			'crosses': [],
 			'pois': []},
-		'area': '中国',  # 所在区域
-		'province': '湖北省',  # 所在省
-		'city': '襄阳市',  # 所在市
+		'area': '',  # 所在区域
+		'province': '',  # 所在省
+		'city': '',  # 所在市
 		'sfzx': '0',  # 是否已经返校
 		'sfjcwhry': '0',  # 是否接触武汉人员
 		'sfjchbry': '1',  # 是否接触湖北人员
@@ -84,7 +84,7 @@ if __name__ == '__main__':
 		'sfsfbh': '0',  # 是否所在省份变化
 		'xjzd': '',  # 现居住地
 		'jcwhryfs': '',  # 接触武汉人员方式
-		'jchbryfs': '家人，我的家在湖北襄阳',  # 接触湖北人员方式
+		'jchbryfs': '',  # 接触湖北人员方式
 		'szgj': '',  # 所在国家
 		'jcjg': ''  # 检查结果
 	}
