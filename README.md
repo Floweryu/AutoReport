@@ -1,6 +1,6 @@
 # AutoReport
 
-北京化工大学疫情上报
+北京化工大学疫情上报，尽在正常情况下使用。
 
 # 使用方法：
 
@@ -14,11 +14,21 @@
 
 ![image-20200630142616244](https://i.loli.net/2020/06/30/MTWDeO3p1wjSNsn.png)
 
-### 3.找到Cookie值，填写`eai-sess`和`UUkey`
+### 3.找到Cookie值，找到`eai-sess`和`UUkey`
 
 ![image-20200630143137490](https://i.loli.net/2020/06/30/zqhwLifIoa5xk24.png)
 
-![image-20200630143220571](https://i.loli.net/2020/06/30/ucEKLUdDn9vx1IZ.png)
+## new_autoreport.py的使用方法
+
+![image-20200817140635200](https://i.loli.net/2020/08/17/Ji29HnokbLRKx68.png)
+
+在此处添加上面抓包的内容即可，名字就填自己的。
+
+## Autoreport.py的使用方法
+
+![image-20200630143220571](https://i.loli.net/2020/08/17/tXOArIx95fc8y6Z.png)
+
+在此处添加上面抓包的内容即可。
 
 ### 4.填写经纬度，为防止意外
 
@@ -58,7 +68,7 @@
 
 2. 在文件中添加下面命令
 
-   `* 7 * * * root /root/anaconda3/bin/python /root/MyCode/AutoReport/autoreport.py >/dev/null 2>&1`
+   `0 7 * * * root /root/anaconda3/bin/python /root/MyCode/AutoReport/autoreport.py >/dev/null 2>&1`
 
    推荐使用绝对路径，避免`python`环境找不到，当然也可以自己设置环境变量，系统级任务要指定用户名。
 
