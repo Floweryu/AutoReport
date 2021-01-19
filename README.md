@@ -20,15 +20,9 @@
 
 ## new_autoreport.py的使用方法
 
-![image-20200817140635200](https://i.loli.net/2020/08/17/Ji29HnokbLRKx68.png)
+![image-20210119164721455](https://i.loli.net/2021/01/19/MhaBDz2tHjmZyAg.png)
 
 在此处添加上面抓包的内容即可，名字就填自己的。
-
-## Autoreport.py的使用方法
-
-![image-20200630143220571](https://i.loli.net/2020/08/17/tXOArIx95fc8y6Z.png)
-
-在此处添加上面抓包的内容即可。
 
 ### 4.填写经纬度，为防止意外
 
