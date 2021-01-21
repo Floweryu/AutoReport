@@ -1,6 +1,6 @@
 # AutoReport
 
-北京化工大学疫情上报，尽在正常情况下使用。
+北京化工大学疫情上报，仅在正常情况下使用。
 
 # 使用方法：
 
@@ -71,8 +71,4 @@
 ![image-20200630100546204](https://i.loli.net/2020/06/30/yRuJ5q2Graw4z9s.png)
 
 https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html
-
-# 参考来自：
-
-https://github.com/W0n9/BUCT_nCoV_Report
 
