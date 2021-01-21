@@ -5,15 +5,33 @@ import urllib3
 
 url = "https://eai.buct.edu.cn/ncov/wap/default/save"
 
-if __name__ == '__main__':
+users = [
+    {
+        'name': '',
+        'address': '',
+        "position": {
+            "Q": '',
+            "R": '', 
+            "lng": '', 
+            "lat": ''
+        }, 
+        "citycode": "", 
+        "adcode": "", 
+        'area': '',  # 手机定位地址
+        'province': '',    # 所在省
+        'city': '',   # 所在市,
+        'cookies': {
+            'eai-sess': '',
+            'UUkey': ''
+        }
+    }
+]
 
+def auto_report(user):
     urllib3.disable_warnings()
     # init
     s = requests.session()
     headers = {}
-
-    # report
-    cookies = {}
     data = {
         'ismoved': '0',  # 是否在校
         'jhfjrq': '',
@@ -34,25 +52,20 @@ if __name__ == '__main__':
         'sfyyjc': '0',
         'jcjgqr': '0',
         'remark': '',
-        'address': '',
+        'address': user['address'],
         'geo_api_info': {
             "type": "complete", 
             "info": "SUCCESS", 
             "status": 1, 
             "$Da": "jsonp_546186_", 
-            "position": {   # 经纬度，根据自己定位填
-                "Q": 32.25443, 
-                "R": 111.63742000000002, 
-                "lng": 111.63742, 
-                "lat": 32.25443
-            }, 
+            "position": user['position'], 
             "message": "Get ipLocation success.Get address success.", 
             "location_type": "ip", 
             "accuracy": None, 
             "isConverted": True, 
             "addressComponent": {
-                "citycode": "0710", 
-                "adcode": "420625", 
+                "citycode": user['citycode'], 
+                "adcode": user['adcode'], 
                 "businessAreas": [], 
                 "neighborhoodType": "", 
                 "neighborhood": "", 
@@ -71,9 +84,9 @@ if __name__ == '__main__':
             "crosses": [], 
             "pois": []
         },
-        'area': '',  # 手机定位地址
-        'province': '',    # 所在省
-        'city': '',   # 所在市
+        'area': user['area'],  # 手机定位地址
+        'province': user['province'],    # 所在省
+        'city': user['city'],   # 所在市
         'sfzx': '0',
         'sfjcwhry': '0',
         'sfjchbry': '0',
@@ -97,9 +110,11 @@ if __name__ == '__main__':
         'jcjg': '',
     }
 
-    name = ''
-    cookies['eai-sess'] = ''
-    cookies['UUkey'] = ''
     result = s.post(url, data=data, headers=headers,
-                    cookies=cookies, verify=False)
-    print(name + ':' + json.loads(result.text)['m'])
+                    cookies=user['cookies'], verify=False)
+    print(user['name'] + ':' + json.loads(result.text)['m'])
+
+if __name__ == '__main__':
+    for item in users:
+        auto_report(item)
+
